@@ -8,43 +8,46 @@
     <title>Rocket Calculator</title>
 </head>
 <body>
-    <div class="calculator">
-        <div class="screen">
-            <div class="upper">
-                23 x 5 =
+    <main class="calculator">
+        <div class="container">
+            <div class="display">
+                <div class="equation-line">
+                    23 x 5 =
+                </div>
+                <div class="numeric-line">
+                    270
+                </div>   
             </div>
-            <div class="lower">
-                270
-            </div>   
+            <div class="keypad">
+
+                <button class= "btn" data-type="function" id="clear-entry">CE</button>
+                <button class= "btn" data-type="function" id="clear-all">C</button>
+                <button class= "btn" data-type="function" id="backspace">⌫</button>
+                <button class= "btn" data-type="operator" id="divide">÷</button>
+                
+                <button class= "btn" data-type="digit">7</button>
+                <button class= "btn" data-type="digit">8</button>
+                <button class= "btn" data-type="digit">9</button>
+                <button class= "btn" data-type="operator" id="multiply">×</button>
+
+                <button class= "btn" data-type="digit">4</button>
+                <button class= "btn" data-type="digit">5</button>
+                <button class= "btn" data-type="digit">6</button>
+                <button class= "btn" data-type="operator" id="subtract">−</button>
+                
+                <button class= "btn" data-type="digit">1</button>
+                <button class= "btn" data-type="digit">2</button>
+                <button class= "btn" data-type="digit">3</button>
+                <button class= "btn" data-type="operator" id="add">+</button>
+
+                <button class= "btn" data-type="function" id="sign">±</button>
+                <button class= "btn" data-type="digit">0</button>
+                <button class= "btn" data-type="function" id="decimal">.</button>
+                <button class= "btn" data-type="function" id="equals">=</button>
+
+            </div>
         </div>
-        <div class="keys">
-
-            <button class="clear-entry">CE</button>
-            <button class="clear-all">C</button>
-            <button class="backspace">⌫</button>
-            <button class="divide">÷</button> <!-- use css this time for button character -->
-            
-            <button class="digit">7</button>
-            <button class="digit">8</button>
-            <button class="digit">9</button>
-            <button class="multiply">×</button>
-
-            <button class="digit">4</button>
-            <button class="digit">5</button>
-            <button class="digit">6</button>
-            <button class="subtract">−</button>
-            
-            <button class="digit">1</button>
-            <button class="digit">2</button>
-            <button class="digit">3</button>
-            <button class="add">+</button>
-
-            <button class="sign">±</button>
-            <button class="digit">0</button>
-            <button class="decimal">.</button>
-            <button class="equals">=</button>
-
-        </div>
-    </div>
+        <div class="description">Calculator app modeled after MS Windows' calculator app.</div>
+    </main>
 </body>
 </html>
