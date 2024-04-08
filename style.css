@@ -1,8 +1,12 @@
 :root {
     --background: #1f2937;
     --font: black;
-    --screen: hsl(0, 0%, 95%);
+    --screen: #f3f3f3;
     --calculator: hsl(0, 0%, 95%);
+    --edge: #f6f6f6;
+    --inside: #fcfcfc;
+    --equals: #196aa7;
+    
 
 }
 
@@ -11,8 +15,6 @@ This helps avoid unexpected variations in appearance caused by default browser s
 *, /* Selects all elements in the HTML document */
 *::before, /* Selects the "before" pseudo-elements of all elements */
 *::after { /* Selects the "after" pseudo-elements of all elements */
-  /* Set the box-sizing property to border-box */
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
   
   /* Reset padding to 0 for all elements */
   padding: 0; /* Remove any default padding */
@@ -36,23 +38,20 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 75vh;
-    min-height: 500px;
-    padding: 10px;
     margin-top: 50px;
 }
   
 .container {
-    width: 400px;
-    border-radius: 15px;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    padding: 5px;
     background-color: var(--calculator);
 }
 
 .display {
     padding: 10px 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     background-color: var(--screen);
     text-align: right;
     word-wrap: break-word;
@@ -61,29 +60,66 @@ body {
   
 .equation-line {
     min-height: 32px;
-    font-size: 20px;
+    font-size: 16px;C
 }
   
 .numeric-line {
     min-height: 64px;
-    font-size: 40px;
+    font-size: 48px;
+    font-weight:bold;
 }
   
 .keypad {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--calculator);
+    gap: 2px;
+} 
+
+.row {
+    display: flex;
+}
+
+.btn {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border-color: #ffffff;
+    font-size: 24px;
+    height: 64px;
+    margin: 1px;
+    
+}
+
+#backspace {
+    font-size: 16px;
+}
+
+.edge {
+    background-color: var(--edge);
+}
+
+.inside {
+    background-color: var(--inside);
+}
+
+#equals{
+    background-color: var(--equals);
+    color: white;
 }
 
 .description {
+    display: flex;
     bottom: 0;
     left: 0;
-    display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    width: 100%;
+    width: 500px;
     padding: 10px;
-    font-size: 20px;
-    background-color: var(--screen);
+    font-size: 16px;
+    color: white;
+    background-color: var(--background);
 }
