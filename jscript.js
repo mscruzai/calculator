@@ -39,7 +39,7 @@ const eqDisplay = document.querySelector(".equation-line");
 const numDisplay = document.querySelector(".numeric-line");
 
 eqDisplay.textContent = '';
-numDisplay ='0';
+numDisplay.value ='0';
 
 let lastOperand = '';
 let newOperand = '';
@@ -50,8 +50,8 @@ const digitButtons = document.querySelectorAll('[data-type="digit"]');
 
 digitButtons.forEach(button => {
     button.addEventListener('click', () => {
-        if(noFirstDigit || numDisplay.textContent == '0' || numDisplay.textContent == overflowMessage ){
-            numDisplay.textContent = button.textContent;
+        if(noFirstDigit || numDisplay.value == '0' || numDisplay.value == overflowMessage ){
+            numDisplay.value = button.textContent;
             noFirstDigit = false;
             if(calcKey) {
                 eqDisplay.textContent = '';
@@ -59,11 +59,11 @@ digitButtons.forEach(button => {
                 calcKey = false;
             }
         }
-        else if(numDisplay.textContent.length < maxScreenLength){
-            numDisplay.textContent =  numDisplay.textContent + button.textContent;
+        else if(numDisplay.value.length < maxScreenLength){
+            numDisplay.value =  numDisplay.value + button.textContent;
         }
         else {
-            numDisplay.textContent = overflowMessage;
+            numDisplay.value = overflowMessage;
         }
     });
 });
@@ -78,13 +78,13 @@ operatorButtons.forEach(button => {
         newOperator = button.textContent;
         if(!noFirstDigit){
             if(lastOperand ==='') {
-                lastOperand = numDisplay.textContent;    
+                lastOperand = numDisplay.value;    
                 eqDisplay.textContent = lastOperand + newOperator;
             }
             else {
-                newOperand = numDisplay.textContent;
+                newOperand = numDisplay.value;
                 newOperand = operate(parseFloat(lastOperand), parseFloat(newOperand), operator);
-                numDisplay.textContent = newOperand;
+                numDisplay.value = newOperand;
                 eqDisplay.textContent = newOperand + newOperator;
                 lastOperand = newOperand;
 
@@ -105,11 +105,11 @@ equalsButton.addEventListener('click', () => {
     let answer;
 
     if(!calcKey){ // If consecutive equal, retain newOperand for next iteration
-        newOperand = numDisplay.textContent; 
+        newOperand = numDisplay.value; 
     }
     eqDisplay.textContent = lastOperand + operator + newOperand + '=';
     answer = operate(parseFloat(lastOperand), parseFloat(newOperand), operator);
-    numDisplay.textContent = answer;
+    numDisplay.value = answer;
     lastOperand = answer;
     noFirstDigit = true;
     calcKey = true;
@@ -120,7 +120,7 @@ const backspaceButton = document.querySelector('#backspace');
 clearEntryButton.addEventListener('click', () => {
     
     noFirstDigit = true;
-    numDisplay.textContent = '0';
+    numDisplay.value = '0';
 
 });
 
@@ -128,7 +128,7 @@ const clearEntryButton = document.querySelector('#clear-entry');
 clearEntryButton.addEventListener('click', () => {
     
     noFirstDigit = true;
-    numDisplay.textContent = '0';
+    numDisplay.value = '0';
 
 });
 
@@ -136,7 +136,7 @@ const clearAllButton = document.querySelector('#clear-all');
 clearAllButton.addEventListener('click', () => {
     
     noFirstDigit = true;
-    numDisplay.textContent = '0';
+    numDisplay.value = '0';
     eqDisplay.textContent = '';
 
     lastOperand = '';
