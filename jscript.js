@@ -126,6 +126,7 @@ equalsButton.addEventListener('click', () => {
     }
     eqDisplay.textContent = lastOperand + ' ' + operator + ' ' + newOperand + ' ' + '=';
     answer = operate(parseFloat(lastOperand), parseFloat(newOperand), operator);
+   
     // lastOperand = answer; // Should we store the original number?
 
     if(('' + answer).includes('e') ){
@@ -174,4 +175,11 @@ clearAllButton.addEventListener('click', () => {
     calcKey = false;
     hasPoint = false;
 
+});
+
+const signButton = document.querySelector('#sign');
+signButton.addEventListener('click', () => {
+    
+    numDisplay.value = numDisplay.value * -1;
+    
 });
