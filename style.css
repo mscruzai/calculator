@@ -4,8 +4,11 @@
     --screen: #f3f3f3;
     --calculator: hsl(0, 0%, 95%);
     --edge: #f6f6f6;
+    --hoveredge: #f1f1f1;
     --inside: #fcfcfc;
+    --hoverin: #f7f7f7;
     --equals: #196aa7;
+    --hovereq: #1f7fc9;
     
 
 }
@@ -97,6 +100,18 @@ body {
     
 }
 
+.btn.inside:hover {
+    background-color: var(--hoverin);
+}
+
+.btn.edge:hover {
+    background-color: var(--hoveredge);
+}
+
+.btn.equals:hover {
+    background-color: var(--hovereq);
+}
+
 #backspace {
     font-size: 16px;
 }
@@ -109,7 +124,7 @@ body {
     background-color: var(--inside);
 }
 
-#equals{
+.btn.equals{
     background-color: var(--equals);
     color: white;
 }
