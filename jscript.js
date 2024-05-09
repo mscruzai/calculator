@@ -183,3 +183,81 @@ signButton.addEventListener('click', () => {
     numDisplay.value = numDisplay.value * -1;
     
 });
+
+
+/* Next add darken on hover and keyboard support */
+
+
+/* Add keyboard support
+I opted to simulate the button presses so that the event functions are still intact (encapsulated).
+And it is easier that way as no need to write new functions or code. */
+document.addEventListener('keydown', (event) => {
+    switch (event.key) {
+        case '0':
+            document.querySelector('#d0').click();
+            break;
+        case '1':
+            document.querySelector('#d1').click();
+            break;
+        case '2':
+            document.querySelector('#d2').click();
+            break;
+        case '3':
+            document.querySelector('#d3').click();
+            break;
+        case '4':
+            document.querySelector('#d4').click();
+            break;
+        case '5':
+            document.querySelector('#d5').click();
+            break;
+        case '6':
+            document.querySelector('#d6').click();
+            break;
+        case '7':
+            document.querySelector('#d7').click();
+            break;
+        case '8':
+            document.querySelector('#d8').click();
+            break;
+        case '9':
+            document.querySelector('#d9').click();
+            break;
+        case '.':
+            document.querySelector('#decimal').click();;
+            break;
+        case '+':
+            document.querySelector('#add').click();
+            break;
+        case '-':
+            document.querySelector('#subtract').click();
+            break;
+        case '*':
+            document.querySelector('#multiply').click();
+            break;
+        case '/':
+            document.querySelector('#divide').click();
+            break;
+        case '=':
+        case 'Enter':
+            // Handle equals sign or Enter key
+            event.preventDefault();
+            equalsButton.click();
+            break;
+        case 'Escape':
+        case 'Delete':
+            // Handle clear entry
+            if(calcKey){
+                clearAllButton.click();
+            } else {
+                clearEntryButton.click();
+            }
+            break;
+        case 'Backspace':
+            backspaceButton.click();
+            break;
+        default:
+            // Ignore other keys
+            break;
+    }
+});
