@@ -261,3 +261,28 @@ document.addEventListener('keydown', (event) => {
             break;
     }
 });
+
+
+/* Add darken on hover, click, keyboard */
+
+/*
+const allCalcButtons = document.querySelectorAll('.btn');
+let darkenAmount = 25;
+
+allCalcButtons.forEach(button => {
+
+    button.addEventListener("mouseover",
+    (theEvent) => {
+        
+        //const computedStyle = getComputedStyle(theEvent.target);
+        let gridColor = theEvent.target.style['background-color'];
+
+        const [r, g, b] = gridColor.match(/\d+/g);
+        const newR = r - darkenAmount;
+        const newG = g - darkenAmount;
+        const newB = b - darkenAmount;
+        theEvent.target.style.background = `rgb(${newR}, ${newG},${newB})`;   
+        
+    });
+});
+*/
